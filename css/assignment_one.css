@@ -3,4 +3,70 @@ Implement your CSS code in this file. Do not change anything in any other file.
 Only this will be graded.
 */
 
+/* Desktop styles - default */
 
+html {
+    box-sizing: border-box;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+  }
+  
+  #mainBody {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 50px;
+  }
+  
+  #leftContainer,
+  #rightContainer {
+    flex: 1;
+  }
+  
+  #rightContainer {
+    display: grid;
+    grid-template-rows: repeat(3, 160px);
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+  }
+  
+  #rightContainer > :first-child {
+    grid-row: span 3;
+    grid-column: 1;
+  }
+  
+  @media (max-device-width: 1000px) {
+    body {
+      width: 60%;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+    #mainBody {
+      flex-direction: column;
+      gap: 40px;
+    }
+  
+    #rightContainer {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 160px);
+    }
+  
+    .display_md {
+      display: none;
+    }
+  }
+  
+  @media (max-device-width: 570px) {
+    body {
+      width: 80%;
+    }
+  }
